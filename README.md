@@ -1,13 +1,3 @@
-# Macro Tracker V3
+# Macro Tracker V3.2
 
-Free personal calorie and protein tracker.
-
-Features:
-- Light theme
-- 7 day button tabs
-- Multiple dishes per meal with + Add another dish
-- Built-in meal illustrations
-- History page
-- Saved meal presets with type-ahead suggestions
-- Local browser storage only
-- No OpenAI API or Cloudflare required
+Install-fix build with a fresh PWA app identity and proper 192px/512px PNG icons for Android/Chrome/Samsung compatibility. Existing local meal data remains on the same site origin.
