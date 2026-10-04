@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#10131a">
+  <title>Macro Tracker</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div>
+        <p class="eyebrow">DAILY NUTRITION</p>
+        <h1>Macro Tracker</h1>
+      </div>
+      <button class="icon-btn" id="settingsBtn" aria-label="Settings">⚙</button>
+    </header>
+
+    <section class="date-row">
+      <button id="prevDay" aria-label="Previous day">‹</button>
+      <div>
+        <strong id="dateLabel"></strong>
+        <small id="dateSub"></small>
+      </div>
+      <button id="nextDay" aria-label="Next day">›</button>
+    </section>
+
+    <section class="progress-grid" id="progressGrid"></section>
+
+    <section class="meals">
+      <div class="section-title">
+        <h2>Meals</h2>
+        <button class="text-btn" id="clearDay">Clear day</button>
+      </div>
+      <div id="mealList"></div>
+    </section>
+  </main>
+
+  <dialog id="settingsDialog">
+    <form method="dialog" class="settings-card" id="settingsForm">
+      <div class="settings-head">
+        <div><p class="eyebrow">YOUR GOALS</p><h2>Daily targets</h2></div>
+        <button class="icon-btn" value="cancel" aria-label="Close">✕</button>
+      </div>
+      <label>Calories <span>kcal</span><input id="targetCalories" type="number" min="1" inputmode="numeric"></label>
+      <label>Protein <span>g</span><input id="targetProtein" type="number" min="1" inputmode="numeric"></label>
+      <label>Carbs <span>g</span><input id="targetCarbs" type="number" min="1" inputmode="numeric"></label>
+      <label>Fat <span>g</span><input id="targetFat" type="number" min="1" inputmode="numeric"></label>
+      <button class="primary full" id="saveSettings" value="default">Save targets</button>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
