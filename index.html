@@ -1,1 +1,87 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#10131a"><title>Macro Tracker</title><link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg"><link rel="stylesheet" href="style.css"></head><body><main class="app"><header><div><p class="eyebrow">DAILY NUTRITION</p><h1>Macro Tracker</h1></div><button class="icon-btn" id="settingsBtn">⚙</button></header><section class="date-row"><button id="prevDay">‹</button><div><strong id="dateLabel"></strong><small id="dateSub"></small></div><button id="nextDay">›</button></section><section class="progress-grid" id="progressGrid"></section><section><div class="section-title"><h2>Meals</h2><button class="text-btn" id="clearDay">Clear day</button></div><div id="mealList"></div></section></main><dialog id="settingsDialog"><form method="dialog" class="settings-card"><div class="settings-head"><div><p class="eyebrow">YOUR GOALS</p><h2>Daily targets</h2></div><button class="icon-btn" value="cancel">✕</button></div><label>Calories <span>kcal</span><input id="targetCalories" type="number" min="1"></label><label>Protein <span>g</span><input id="targetProtein" type="number" min="1"></label><button class="primary full" id="saveSettings">Save targets</button></form></dialog><div class="toast" id="toast"></div><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>Macro Tracker</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">DAILY NUTRITION</p>
+        <h1>Macro Tracker</h1>
+      </div>
+      <button class="icon-btn" id="settingsBtn" aria-label="Settings">⚙</button>
+    </header>
+
+    <section id="todayShell">
+      <nav class="week-tabs" id="weekTabs" aria-label="Days of the week"></nav>
+      <section class="progress-grid" id="progressGrid"></section>
+      <section class="section-head">
+        <div>
+          <h2 id="selectedDate"></h2>
+          <p class="muted">Add each dish separately</p>
+        </div>
+        <button class="text-btn danger" id="clearDay">Clear day</button>
+      </section>
+      <div id="mealList"></div>
+    </section>
+
+    <section id="historyView" class="hidden">
+      <section class="section-head">
+        <div><h2>History</h2><p class="muted">Previous logged days</p></div>
+      </section>
+      <div id="historyList"></div>
+    </section>
+
+    <section id="savedView" class="hidden">
+      <section class="section-head">
+        <div><h2>Saved Meals</h2><p class="muted">Tap a suggestion while typing to auto-fill macros</p></div>
+        <button class="primary small" id="addPreset">+ Add</button>
+      </section>
+      <div id="presetList"></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Main navigation">
+    <button data-view="today" class="active"><span class="nav-icon">⌂</span><span>Today</span></button>
+    <button data-view="history"><span class="nav-icon">◷</span><span>History</span></button>
+    <button data-view="saved"><span class="nav-icon">♡</span><span>Saved</span></button>
+  </nav>
+
+  <dialog id="settingsDialog">
+    <form method="dialog" class="modal">
+      <div class="modal-head">
+        <div><p class="eyebrow">YOUR GOALS</p><h2>Daily targets</h2></div>
+        <button class="icon-btn" value="cancel" aria-label="Close">✕</button>
+      </div>
+      <label>Calories <span>kcal</span><input id="targetCalories" type="number" min="1" inputmode="numeric"></label>
+      <label>Protein <span>g</span><input id="targetProtein" type="number" min="1" step="1" inputmode="numeric"></label>
+      <button class="primary full" id="saveSettings">Save targets</button>
+    </form>
+  </dialog>
+
+  <dialog id="presetDialog">
+    <form method="dialog" class="modal">
+      <div class="modal-head">
+        <div><p class="eyebrow">QUICK ENTRY</p><h2>Saved meal</h2></div>
+        <button class="icon-btn" value="cancel" aria-label="Close">✕</button>
+      </div>
+      <label class="single">Name<input id="presetName" type="text" placeholder="e.g. Protein Pudding"></label>
+      <label>Calories <span>kcal</span><input id="presetCalories" type="number" min="0" inputmode="numeric"></label>
+      <label>Protein <span>g</span><input id="presetProtein" type="number" min="0" step="0.1" inputmode="decimal"></label>
+      <input id="presetEdit" type="hidden">
+      <button class="primary full" id="savePreset">Save meal</button>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>

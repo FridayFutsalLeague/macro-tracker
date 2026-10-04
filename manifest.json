@@ -3,14 +3,9 @@
   "short_name": "Macro Tracker",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#0d1016",
-  "theme_color": "#10131a",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "icons": [
-    {
-      "src": "icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    }
+    {"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
   ]
 }
