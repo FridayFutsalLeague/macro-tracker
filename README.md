@@ -1,3 +1,3 @@
-# Macro Tracker V3.3
+# Macro Tracker V3.4
 
-Adds previous/next week navigation and a live weekly calories/protein balance showing weekly targets, totals, remaining/over amounts, and an average rest-of-week guide.
+Adds dynamic rest-of-week calorie and protein targets inside Weekly Progress. The main daily targets remain unchanged. Also refreshes the meal illustrations so Breakfast, Lunch, Dinner and each Snack better match the meal type.
