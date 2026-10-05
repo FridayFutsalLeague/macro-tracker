@@ -1,3 +1,3 @@
-# Macro Tracker V3.2
+# Macro Tracker V3.3
 
-Install-fix build with a fresh PWA app identity and proper 192px/512px PNG icons for Android/Chrome/Samsung compatibility. Existing local meal data remains on the same site origin.
+Adds previous/next week navigation and a live weekly calories/protein balance showing weekly targets, totals, remaining/over amounts, and an average rest-of-week guide.
